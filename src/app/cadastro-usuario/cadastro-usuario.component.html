@@ -1,0 +1,28 @@
+<form class="container-sm">
+  <div class="mb-3">
+    <span class="d-flex"><label for="nome" class="form-label">Nome</label><h4 class="color-red">*</h4></span>
+    <input type="text" class="form-control"  [(ngModel)]="nome" name="nome" id="nome" aria-describedby="nome">
+    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+  </div>
+  <div class="mb-3">
+    <span class="d-flex"><label for="email" class="form-label">Email</label><h4 class="color-red">*</h4></span>
+    <input type="email" class="form-control"  [(ngModel)]="email" name="email" id="email" aria-describedby="email">
+  </div>
+
+  <div class="mb-3">
+    <span class="d-flex"><label for="password" class="form-label">Password</label><h4 class="color-red">*</h4></span>
+    <input type="password" class="form-control"  [(ngModel)]="password" name="password" id="password" aria-describedby="password">
+  </div>
+
+  <div class="mb-3">
+    <span class="d-flex"><label for="password" class="form-label">Confirm your password</label><h4 class="color-red">*</h4></span>
+    <input type="password" class="form-control"  [(ngModel)]="passwordM" name="password" id="password" aria-describedby="password">
+  </div>
+
+  <div class="d-flex justify-content-end gap-3">
+    <button type="button" class="btn btn-danger" (click)="limparStorage()">Limpar</button>
+    <button type="button" class="btn btn-primary" (click)="salvar()">Salvar</button>
+  </div>
+
+
+</form>

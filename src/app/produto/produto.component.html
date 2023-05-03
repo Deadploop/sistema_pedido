@@ -1,0 +1,18 @@
+<main class="center">
+  <div class="flex-start">
+    <button class="btn btn-light btn-sm" routerLink="/produtos">Voltar</button>
+  </div>
+  <form class="pequeno-container" (submit)="handleSalvar()">
+    <h1 class="h3 mb-3 fw-normal">Cadastro de produtos</h1>
+
+    <div class="form-floating mb-4">
+      <input type="text" class="form-control" name="nome" id="nome" [(ngModel)]="nome">
+      <label for="nome">Nome</label>
+    </div>
+    <div class="form-floating mb-4">
+      <input type="text" class="form-control" name="valor" id="valor" [(ngModel)]="valor">
+      <label for="valor">Valor</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Cadastrar</button>
+  </form>
+</main>

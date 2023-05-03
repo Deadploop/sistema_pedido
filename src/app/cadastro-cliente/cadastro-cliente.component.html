@@ -1,0 +1,22 @@
+<form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1"  class="form-label" >Nome</label>
+      <input type="text" name="nome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">Digite o nome do cliente</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1"  class="form-label" >CPF</label>
+        <input type="text" name="cpf" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Digite o CPF do cliente</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1"  class="form-label" >Cidade</label>
+        <input type="text" name="cidade" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Digite a cidade do cliente</div>
+      </div>
+
+    <div class="mb-3">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="salvar()" >Salvar</button>
+    <button type="submit" name="limpar" class="btn btn-danger" (click)="limpar()" >Limpar</button>
+  </form>

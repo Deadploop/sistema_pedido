@@ -1,0 +1,4 @@
+<select [(ngModel)]="estadoSelecionado" class="form-select" aria-label="select estado" name="estado">
+  <option *ngFor="let estado of estados" [value]="estado">{{ estado }}
+  </option>
+</select>

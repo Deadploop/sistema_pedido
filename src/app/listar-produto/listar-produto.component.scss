@@ -1,0 +1,30 @@
+.color-red {
+  color: rgb(180, 10, 10);
+  cursor: pointer;
+}
+
+.color-green {
+  color: rgb(74, 116, 13);
+  cursor: pointer;
+
+}
+
+.pequeno-container {
+  width: 700px;
+}
+
+.flex-start {
+  display: flex;
+  flex: 1;
+  width: 700px;
+  align-items: flex-start;
+}
+
+.center {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+}

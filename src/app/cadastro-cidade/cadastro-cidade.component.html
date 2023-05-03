@@ -1,0 +1,14 @@
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nome</label>
+    <input type="email" class="form-control" [(ngModel)]="nome" name="nome" id="nome" aria-describedby="nome">
+    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Estado</label>
+    <app-lista-estado></app-lista-estado>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="salvar()">Salvar</button>
+  <button type="button" class="btn btn-danger" (click)="limparStorage()">Limpar</button>
+
+</form>

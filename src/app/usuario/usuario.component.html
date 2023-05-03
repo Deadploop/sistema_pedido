@@ -1,0 +1,20 @@
+<form>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Nome*</label>
+        <input type="text" name="nome" class="form-control" id="exampleInputPassword1" [(ngModel)]="nome">
+      </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">E-mail*</label>
+        <input type="email" name="email" class="form-control" id="exampleInputPassword1" [(ngModel)]="email">
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Senha*</label>
+      <input type="password" name="senha" class="form-control" id="exampleInputPassword1" [(ngModel)]="senha">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" name="mostrar_senha" for="exampleCheck1">Mostrar a Senha</label>
+    </div>
+    <button type="submit" name="salvar" class="btn btn-primary" (click)="salvar()" >Salvar</button>
+    <button type="submit" name="limpar" class="btn btn-danger" (click)="limpar()" >Limpar</button>
+  </form>

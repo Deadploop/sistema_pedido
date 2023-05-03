@@ -1,0 +1,15 @@
+.min-h {
+  min-height: 80vh;
+}
+
+footer {
+  width: 100%;
+  background-color: cadetblue;
+  min-height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: whitesmoke;
+  font-weight: bold;
+}
