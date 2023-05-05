@@ -25,4 +25,6 @@ export class ListarProdutoComponent implements OnInit {
     this.router.navigateByUrl('produto/' + indice );
   }
 
+
+
 }

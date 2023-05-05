@@ -8,6 +8,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { ListarProdutoComponent } from './listar-produto/listar-produto.component';
+import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,9 @@ const routes: Routes = [
   {
     path: "produtos/criar",
     component: ProdutoComponent
+  },
+  {
+    path: 'produto/:indice', component:ProdutoComponent
   }
 
 ];

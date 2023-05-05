@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { PedidoComponent } from './pedido/pedido.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 const routes: Routes = [
   {path:'cidade', component:CadastroCidadeComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'cliente', component:CadastroClienteComponent},
   {path: 'produto', component:CadastroProdutoComponent},
-  {path: 'pedido', component:PedidoComponent}
+  {path: 'pedido', component:PedidoComponent},
+  {path: 'produto/:indice', component:ProdutoComponent}
 ];
 
 @NgModule({

@@ -26,12 +26,17 @@ export class ProdutoService {
   }
 
   salvar(){
-    localStorage.setItem('produto',JSON.stringify(this.produtos)); 
+    localStorage.setItem('produtos',JSON.stringify(this.produtos)); 
   }
   
 
   update(indice:number,produto:Produto){
     this.produtos[indice] = produto;
+    this.salvar();
+  }
+
+  inserir(produto:Produto){
+    this.produtos.push(produto);
     this.salvar();
   }
 

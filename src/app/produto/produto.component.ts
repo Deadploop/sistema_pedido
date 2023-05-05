@@ -15,7 +15,7 @@ export interface Produto {
 
 export class ProdutoComponent {
   public nome: string = "";
-  public valor: string = "";
+  public valor: number = 0;
 
   public produtos:Array<Produto> = [];
   public indice:number = -1;
@@ -27,10 +27,11 @@ export class ProdutoComponent {
 
     ngOnInit(): void {
       this.actived_route.params.subscribe((params:any) => {
-       if (params.indice >= 0){
+       if (params.indice > -1){
         this.indice = params.indice;
         let produto = this.produto_service.registro(this.indice);
         this.nome = produto.nome;
+        this.valor = produto.valor;
        }
       });
 
@@ -40,37 +41,25 @@ export class ProdutoComponent {
   public handleSalvar() {
     console.log(`nome ${this.nome} - valor ${this.valor}`);
 
-    if (this.nome.trim().length == 0 || this.valor.trim().length == 0) {
+    if (this.nome.trim().length == 0 || this.valor <= 0) {
       return alert("É necessário informar todos os campos");
     }
 
-    const objSalvar: Produto = {
+    const produtoSalvar: Produto = {
       nome: this.nome,
-      valor: parseInt(this.valor)
+      valor: this.valor
     };
 
-    const produtosStorage = this.getProdutosFromLocalStorage();
-
-    const newProducts = [...produtosStorage, objSalvar];
-
-    this.salvarProdutosNoLocalStorage(newProducts);
-
-  }
-
-  public getProdutosFromLocalStorage(): Produto[] {
-    const produtos = JSON.parse(String(localStorage.getItem('produtos')));
-
-    return produtos ? produtos : [];
-  }
-
-  public salvarProdutosNoLocalStorage(produtos: Produto[]): void {
-    localStorage.setItem('produtos', JSON.stringify(produtos));
-
+    if(this.indice !== -1){
+      this.produto_service.update(this.indice, produtoSalvar);
+    } else{
+      this.produto_service.inserir(produtoSalvar);
+    }
     this.limparProdutos();
   }
 
   public limparProdutos() {
     this.nome = "";
-    this.valor = "";
+    this.valor = 0;
   }
 }
