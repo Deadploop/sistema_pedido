@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProdutoService } from '../service/produto.service';
 
 export interface Produto {
   nome: string;
@@ -10,9 +12,30 @@ export interface Produto {
   templateUrl: './produto.component.html',
   styleUrls: ['./produto.component.scss']
 })
+
 export class ProdutoComponent {
   public nome: string = "";
   public valor: string = "";
+
+  public produtos:Array<Produto> = [];
+  public indice:number = -1;
+
+  constructor(
+    public actived_route:ActivatedRoute,
+    public produto_service:ProdutoService
+  ){}
+
+    ngOnInit(): void {
+      this.actived_route.params.subscribe((params:any) => {
+       if (params.indice >= 0){
+        this.indice = params.indice;
+        let produto = this.produto_service.registro(this.indice);
+        this.nome = produto.nome;
+       }
+      });
+
+    }
+
 
   public handleSalvar() {
     console.log(`nome ${this.nome} - valor ${this.valor}`);

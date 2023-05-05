@@ -11,10 +11,13 @@ export class ProdutoService {
 
   constructor() {  }
 
-  public getProdutosFromLocalStorage(): void {
+  public getProdutosFromLocalStorage() {
     const produtosS = JSON.parse(String(localStorage.getItem('produtos')));
 
     this.produtos = produtosS ? produtosS : [];
+
+    return produtosS ? produtosS : [];
+ 
   }
 
   excluir(indice:number){
@@ -26,4 +29,14 @@ export class ProdutoService {
     localStorage.setItem('produto',JSON.stringify(this.produtos)); 
   }
   
+
+  update(indice:number,produto:Produto){
+    this.produtos[indice] = produto;
+    this.salvar();
+  }
+
+  registro(indice:number){
+    this.produtos = this.getProdutosFromLocalStorage();
+    return this.produtos[indice];
+  }
 }
