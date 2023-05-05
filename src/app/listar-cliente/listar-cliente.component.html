@@ -1,0 +1,29 @@
+<button class="btn btn-primary" routerLink="/cliente/-1">
+  Novo
+</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Cidade</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of cliente_service.clientes; let i = index">
+        <th scope="row"> 1 </th>
+        <td>{{cliente.nome_cliente}}</td> 
+        <td>{{cliente.cpf}}</td>
+        <td>{{cliente.cidade}}</td>
+        <td>
+          <fa-icon [icon]="faEdit" (click)="editar(i)"></fa-icon> 
+        </td>
+        <td>
+          <fa-icon [icon]="faTrash" (click)="cliente_service.excluir(i)"></fa-icon>
+         </td>
+      </tr>
+    </tbody>
+  </table>
